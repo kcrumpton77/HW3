@@ -3,25 +3,23 @@
 <%= form_with model: [@place, @entry] do |form| %>
   <%= form.hidden_field :place_id, value: @place.id %>
 
-  <div>
+  <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-  </div>
+  </p>
 
-  <div>
+  <p>
     <%= form.label :description %><br>
     <%= form.text_area :description %>
-  </div>
+  </p>
 
-  <div>
-    <%= form.label :date_posted, "Date" %><br>
-    <%= form.date_field :date_posted %>
-  </div>
+  <p>
+    <%= form.label :occurred_on, "Date" %><br>
+    <%= form.date_field :occurred_on %>
+  </p>
 
   <br>
   <%= form.submit "Create Entry" %>
 <% end %>
 
-<%= link_to "Back to <%= @place.name %>", place_path(@place) %>
-
-<p>Find me in app/views/entries/new.html.erb</p>
+<%= link_to "Back to #{@place.name}", place_path(@place) %>
