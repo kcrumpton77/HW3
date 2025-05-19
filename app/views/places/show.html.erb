@@ -1,5 +1,20 @@
 <h1><%= @place.name %></h1>
 
+<h2>Entries</h2>
+<% if @place.entries.any? %>
+  <ul>
+    <% @place.entries.each do |entry| %>
+      <li>
+        <strong><%= entry.title %></strong> - <%= entry.posted_on %><br>
+        <em><%+ entry.description %></em>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Nothing Added Yet.</p>
+<% end %>
+
+<%= link_to "Add a New Entry", new_place_entry_path(@place) %><br>
 <%= link_to "Back to All Places", places_path %>
 
 
