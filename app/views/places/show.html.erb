@@ -1,8 +1,10 @@
 <h1><%= @place.name %></h1>
 
-<% if @place.entries.any? %>
+<% entries = @place.entries %>
+
+<% if entries.any? %>
   <ul>
-    <% @place.entries.each do |entry| %>
+    <% for entry in entries %>
       <li>
         <strong><%= entry.title %></strong><br>
         <%= entry.occurred_on %><br>

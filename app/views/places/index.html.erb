@@ -1,7 +1,9 @@
 <h1>Places I Have Visited</h1>
 
+<% places = Place.all %>
+
 <ul style= "list-style: none; padding: 0;">
-  <% @places.each do |place| %>
+  <% for place in places %>
     <li style= "margin-bottom: 12px;">
       <%= link_to place.name, place_path(place), style: "text-decoration: underline;" %>
     </li>

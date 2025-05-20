@@ -15,12 +15,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
-    redirect_to place_path(@entry.place), notice: "Entry deleted."
-  end
-  
   private
 
   def entry_params

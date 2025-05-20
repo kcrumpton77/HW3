@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'entries/new'
-    get("/", { controller: "places", action: "index" })
+    get("/", { :controller => "places", :action => "index" })
   
   resources :places do
-    resources :entries, only: [:new, :create, :destroy]
+    resources :entries, only: [:new, :create]
   end
 
     # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
